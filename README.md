@@ -68,4 +68,4 @@ public sealed class AdyenRequestService
 
 `Get()` returns the cached named client. Configuration is applied when that client is first created; changing configuration afterward does not rebuild it.
 
-The dependency-injection container owns resolved providers. Disposing a scoped provider does not dispose the shared cached `HttpClient`.
+The dependency-injection container owns resolved providers. Disposing a provider removes and disposes its named `HttpClient` from the shared cache.
