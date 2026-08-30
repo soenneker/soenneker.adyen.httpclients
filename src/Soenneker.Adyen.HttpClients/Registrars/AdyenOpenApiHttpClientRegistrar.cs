@@ -11,7 +11,7 @@ namespace Soenneker.Adyen.HttpClients.Registrars;
 public static class AdyenOpenApiHttpClientRegistrar
 {
     /// <summary>
-    /// Adds <see cref="AdyenOpenApiHttpClient"/> as a singleton service. <para/>
+    /// Adds <see cref="IAdyenOpenApiHttpClient"/> as a singleton service backed by the singleton HTTP-client cache.
     /// </summary>
     public static IServiceCollection AddAdyenOpenApiHttpClientAsSingleton(this IServiceCollection services)
     {
@@ -22,7 +22,7 @@ public static class AdyenOpenApiHttpClientRegistrar
     }
 
     /// <summary>
-    /// Adds <see cref="AdyenOpenApiHttpClient"/> as a scoped service. <para/>
+    /// Adds <see cref="IAdyenOpenApiHttpClient"/> as a scoped service backed by the singleton HTTP-client cache.
     /// </summary>
     public static IServiceCollection AddAdyenOpenApiHttpClientAsScoped(this IServiceCollection services)
     {
