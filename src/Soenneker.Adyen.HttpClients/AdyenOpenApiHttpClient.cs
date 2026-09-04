@@ -11,6 +11,7 @@ using Soenneker.Utils.HttpClientCache.Abstract;
 
 namespace Soenneker.Adyen.HttpClients;
 
+/// <inheritdoc cref="IAdyenOpenApiHttpClient" />
 public sealed class AdyenOpenApiHttpClient : IAdyenOpenApiHttpClient
 {
     private readonly IHttpClientCache _httpClientCache;
