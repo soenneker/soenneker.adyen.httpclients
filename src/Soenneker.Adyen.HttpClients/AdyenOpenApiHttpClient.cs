@@ -29,7 +29,7 @@ public sealed class AdyenOpenApiHttpClient : IAdyenOpenApiHttpClient
     {
         return _httpClientCache.Get(nameof(AdyenOpenApiHttpClient), (config: _config, baseUrl: _config["Adyen:ClientBaseUrl"] ?? _prodBaseUrl), static state =>
         {
-            var apiKey = state.config.GetValueStrict<string>("Adyen:ApiKey");
+            var apiKey = state.config.GetStringStrict("Adyen:ApiKey");
             string authHeaderName = state.config["Adyen:AuthHeaderName"] ?? "Authorization";
             string authHeaderValueTemplate = state.config["Adyen:AuthHeaderValueTemplate"] ?? "Bearer {token}";
             string authHeaderValue = authHeaderValueTemplate.Replace("{token}", apiKey, StringComparison.Ordinal);
